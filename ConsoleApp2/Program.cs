@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using ConsoleApp2.DesignPattern.Builder;
+using ConsoleApp2.DesignPattern.FacetedBuilderr;
 using ConsoleApp2.DesignPattern.FluentBuilder;
 using ConsoleApp2.DesignPattern.RecursiveGenericsFluentBuilder;
 using ConsoleApp2.Solid.OpenClose;
@@ -38,7 +39,14 @@ Console.WriteLine($"car {nameof(BmwCar2.name)} : {BmwCar2.name} || {nameof(BmwCa
 ///RecursiveGenericsFluentBuilder
 ///
 BuildeDirector buildeDirector =new BuildeDirector();
-var newcar = buildeDirector.SetColor("red").
+var newcar = buildeDirector.SetColor("red").SetName("benz").SetModel("s500").SetSpeed("300").build();
 Console.WriteLine($"car {nameof(newcar.name)} : {newcar.name} || {nameof(newcar.Color)} : {newcar.Model}");
 
+//////////////////
+///FacetedBuilder
+///
+CarBuilderFacade carBuilderFacade = new CarBuilderFacade();
 
+var car3= carBuilderFacade.Info.WithColor("red").WithType("BMW").WithNumberOfDoors(4).Built.InCity("tehran").AtAddress("vanak").Build();
+
+Console.WriteLine(car3.ToString());
