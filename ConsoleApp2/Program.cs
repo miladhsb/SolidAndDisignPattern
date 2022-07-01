@@ -2,6 +2,7 @@
 
 using ConsoleApp2.DesignPattern.Builder;
 using ConsoleApp2.DesignPattern.FluentBuilder;
+using ConsoleApp2.DesignPattern.RecursiveGenericsFluentBuilder;
 using ConsoleApp2.Solid.OpenClose;
 
 DiscountProduct discountProduct = new();
@@ -30,3 +31,14 @@ CarBuilder BMWBuilder = new ConsoleApp2.DesignPattern.FluentBuilder.BMWBuilder()
 var BmwCar2 = BMWBuilder.CreateName().CreateModel().CreateColor().GetCar();
 
 Console.WriteLine($"car {nameof(BmwCar2.name)} : {BmwCar2.name} || {nameof(BmwCar2.Color)} : {BmwCar2.Color}");
+
+
+
+////////////////////
+///RecursiveGenericsFluentBuilder
+///
+BuildeDirector buildeDirector =new BuildeDirector();
+var newcar = buildeDirector.SetColor("red").
+Console.WriteLine($"car {nameof(newcar.name)} : {newcar.name} || {nameof(newcar.Color)} : {newcar.Model}");
+
+
