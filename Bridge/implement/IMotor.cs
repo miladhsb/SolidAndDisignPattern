@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adapter.DesignPattern.Adapter
+namespace Bridge.implement
 {
-    public interface IMessanger
+    public interface IMotor
     {
-
-         void SendMessage(string message);
-       
+         void CarMorot();
+      
     }
 }
